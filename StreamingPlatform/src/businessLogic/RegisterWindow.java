@@ -14,9 +14,5 @@ public class RegisterWindow {
 		if(!type) {
 			PageControllerUser pgu = new PageControllerUser(userName);
 		}
-		
-		PageViewer pg = new PageViewer
 	}
-	
-
 }
