@@ -1,14 +1,16 @@
 package businessLogic;
 
+import domainModel.Channel;
+import domainModel.ChannelsPanel;
+import domainModel.Live;
+
 public class PageControllerUser {
 	
 	protected String userName;
-	protected ChannelsPannel cp;
+	protected ChannelsPanel cp;
 	protected PageViewer pw;
-	protected Live 
 	
-	
-	public PageControllerUser(String userName, ChannelPanel cp){
+	public PageControllerUser(String userName, ChannelsPanel cp){
 		this.userName = userName;
 		this.cp = cp;
 	}
