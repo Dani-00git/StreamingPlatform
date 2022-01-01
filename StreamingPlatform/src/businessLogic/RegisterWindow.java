@@ -1,10 +1,22 @@
 package businessLogic;
 
-public class RegisterWindow {
+//
+// Token for commit: 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
+//
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.print("HELLO WORLD!!");
+public class RegisterWindow {
+	
+	public void login(String userName, Boolean type) {
+		
+		if(type) {
+			PageControllerStreamer pgs = new PageControllerStreamer(userName);
+		}
+		if(!type) {
+			PageControllerUser pgu = new PageControllerUser(userName);
+		}
+		
+		PageViewer pg = new PageViewer
 	}
+	
 
 }
