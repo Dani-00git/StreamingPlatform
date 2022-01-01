@@ -1,4 +1,4 @@
-package DomainModel;
+package businessLogic;
 
 public class RegisterWindow {
 
