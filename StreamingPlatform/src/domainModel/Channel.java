@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 import businessLogic.PageViewer;
 
-public class Channel extends Observable{
+public class Channel extends Osservato {
 	
 	private String name;
 	private Live live;
@@ -27,11 +27,11 @@ public class Channel extends Observable{
 	}
 	
 	public void startLive(String name) {
-		this.live.startLive(name);
+		this.live.startLive(name, this);
 	}
 	
 	public void stopLive() {
-		this.live.closeLive();
+		this.live.closeLive(this);
 	}
 	
     public Live getLive() {

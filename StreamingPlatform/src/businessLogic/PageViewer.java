@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import domainModel.Channel;
 import domainModel.Comment;
 import domainModel.Live;
-import domainModel.Observer;
+import domainModel.Osservatore;
 
-public class PageViewer implements Observer{
+public class PageViewer implements Osservatore{
 	
 	private ArrayList<Comment> commentList = new ArrayList<Comment>();
 	private ArrayList<Channel> followedChannelOnAir = new ArrayList<Channel>();

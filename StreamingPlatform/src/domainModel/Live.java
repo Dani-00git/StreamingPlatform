@@ -5,7 +5,7 @@ import java.util.Observable;
 
 import businessLogic.PageViewer;
 
-public class Live extends Observable{
+public class Live extends Osservato{
 	
 	private String name;
 	private int likes;
@@ -17,16 +17,16 @@ public class Live extends Observable{
     	this.likes = 0;
     }
     
-    public void startLive(String name) {   //FIXED la live parte non quando viene creata ma quando lo streamer la fa partire
-    	this.onAir = true;
+    public void startLive(String name, Channel thisChannel) {   //FIXED la live parte non quando viene creata ma quando lo streamer la fa partire
+    	this.onAir = true;                                      // il metodo notify richiede un bool e il canale della live, quindi gli ho fatto passare un riferimemto al canale
     	this.name = name;
-    	super.notify(true);
+    	super.notify(true, thisChannel);
     }
     
-    public void closeLive() {
+    public void closeLive(Channel thisChannel) {
     	this.onAir = false;
     	this.name = null;
-    	super.notify(false);
+    	super.notify(false, thisChannel);
     }
 	
 	public void addLike() {
@@ -37,8 +37,8 @@ public class Live extends Observable{
 		this.likes--;
 	}
 	
-	public void addComment(String myComment) {
-		Comment comment = new Comment(myComment);
+	public void addComment(String myComment, String user) {
+		Comment comment = new Comment(myComment, user);
 		this.commentList.add(comment);
 	}
 	
@@ -47,7 +47,7 @@ public class Live extends Observable{
 	}
 	
 	public void addWatcher(PageViewer newWatcher) {
-		super.attachViewer(newWatcher);
+	    super.attachViewer(newWatcher);
 	}
 	
 	public void removeWatcher(PageViewer watcher) {

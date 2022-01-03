@@ -47,7 +47,7 @@ public class User {
     }
    
     public void addComment(String myComment) {
-    	this.watchedLive.addComment(myComment);
+    	this.watchedLive.addComment(myComment, this.name);
     }
    
     public void addTopic(Topic topic) {

@@ -1,6 +1,6 @@
 package domainModel;
 
-public interface Observer {
+public interface Osservatore {
 	
 	public void update(Boolean se, Channel c);
 	public void update(int likes);
