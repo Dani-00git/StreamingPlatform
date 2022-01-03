@@ -3,8 +3,11 @@ package domainModel;
 public class Comment {
 	
 	String comment;
-	public Comment(String comment) {
-		this.comment=comment;
+	String user;
+	
+	public Comment(String comment, String user) {
+		this.comment = comment;
+		this.user = user;
 	}
 
 }

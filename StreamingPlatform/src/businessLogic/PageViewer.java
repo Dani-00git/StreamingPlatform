@@ -5,18 +5,15 @@ import java.util.ArrayList;
 import domainModel.Channel;
 import domainModel.Comment;
 import domainModel.Live;
+import domainModel.Observer;
 
-public class PageViewer {
+public class PageViewer implements Observer{
 	
 	private ArrayList<Comment> commentList = new ArrayList<Comment>();
 	private ArrayList<Channel> followedChannelOnAir = new ArrayList<Channel>();
+	private ArrayList<Channel> recommendedChannels = new ArrayList<Channel>();
 	private int likes;
-	private Live currentLive;
-
-	public void setCurrentLive(Live l) {
-		this.currentLive = l;
-		l.attachViewer(this);
-	}
+	
 	public void update(Comment c) {
 		commentList.add(c);
 	}
@@ -30,5 +27,8 @@ public class PageViewer {
 		if(!startedEnded) {
 			followedChannelOnAir.remove(c);
 		}
+	}
+	public void updateRecommendedChannels(ArrayList<Channel> c) {
+		recommendedChannels = c;
 	}
 }

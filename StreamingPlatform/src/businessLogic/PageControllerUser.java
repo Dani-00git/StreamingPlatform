@@ -10,7 +10,7 @@ public class PageControllerUser {
 	
 	protected User user;
 	protected ChannelsPanel cp;
-	protected PageViewer pw;
+	protected PageViewer pv;
 	protected RecommendedChannels rc;
 	
 	public PageControllerUser(String userName, ChannelsPanel cp){
@@ -21,10 +21,10 @@ public class PageControllerUser {
 		return cp.search(channelName);
 	}
 	public void watchLive(Channel c) {
-		user.watchLive(c);
+		user.watchLive(c, pv);
 	}
 	public void closeLive() {
-		user.closeLive();
+		user.closeLive(pv);
 	}
 	public void addComment(String s) {
 		user.addComment(s);
@@ -33,10 +33,10 @@ public class PageControllerUser {
 		user.addLike();
 	}
 	public void followChannel(Channel c) {
-		user.followChannel(c);
+		user.followChannel(c, pv);
 	}
-	public void unChannel(Channel c) {
-		user.followChannel(c);
+	public void unfollowChannel(Channel c) {
+		user.unfollowChannel(c, pv);
 	}
 	public void addTopic(String topic) {
 		rc.addTopic(topic);
