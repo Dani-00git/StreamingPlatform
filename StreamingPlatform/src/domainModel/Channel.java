@@ -11,7 +11,7 @@ public class Channel extends Osservato {
 	private ArrayList<User> followers = new ArrayList<User> ();   
 	private Topic channelTopic;
 	
-	public Channel(String name) {    //FIXED
+	public Channel(String name) {   
 		this.name=name;   
 		this.live=new Live();
 	}
@@ -44,6 +44,9 @@ public class Channel extends Osservato {
     public Topic getTopic() {
     	Topic t = new Topic(channelTopic);
     	return t;
+    }
+    public User getFollower(int i) {
+    	return followers.get(i);
     }
 
 }
