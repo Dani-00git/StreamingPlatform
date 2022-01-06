@@ -1,2 +1,3 @@
 module StreamingPlatform {
+	requires junit;
 }

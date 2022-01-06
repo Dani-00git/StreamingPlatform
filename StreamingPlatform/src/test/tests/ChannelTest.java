@@ -1,11 +1,12 @@
 package tests;
 
-import org.junit.Assert
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-import businessLogic.PageViewer;
+import org.junit.Assert;
 import domainModel.Channel;
+import businessLogic.PageViewer;
 import domainModel.User;
-
 public class ChannelTest{
 	
 	Channel c;
