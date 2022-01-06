@@ -24,7 +24,7 @@ public class Live extends Osservato{
     	super.notify(true, n);
     }
     
-    public void closeLive(Channel thisChannel) {
+    public void stopLive(Channel thisChannel) {
     	this.onAir = false;
     	this.name = null;
     	String n = thisChannel.getName();

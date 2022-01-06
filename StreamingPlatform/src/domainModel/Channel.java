@@ -36,7 +36,7 @@ public class Channel extends Osservato {
 	}
 	
 	public void stopLive() {
-		this.live.closeLive(this);
+		this.live.stopLive(this);
 	}
 	
     public Live getLive() {
