@@ -1,5 +1,7 @@
 package tests;
 
+import org.junit.Assert
+
 import businessLogic.PageViewer;
 import domainModel.Channel;
 import domainModel.User;
