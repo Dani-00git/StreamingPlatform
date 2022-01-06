@@ -22,7 +22,7 @@ public class Osservato {
 		followers.remove(o);
 	}
 	
-	protected void notify(Boolean se, Channel c) {
+	protected void notify(Boolean se, String c) {
 		for(Osservatore o : followers) {
 			o.update(se, c);
 		}
