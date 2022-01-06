@@ -31,4 +31,7 @@ public class PageViewer implements Osservatore{
 	public void updateRecommendedChannels(ArrayList<String> c) {
 		recommendedChannels = c;
 	}
+	public void destroyCommentList() {
+		commentList = new ArrayList<Comment>();
+	}
 }

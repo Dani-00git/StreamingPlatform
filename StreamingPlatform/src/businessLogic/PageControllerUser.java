@@ -15,6 +15,7 @@ public class PageControllerUser {
 	
 	public PageControllerUser(String userName, ChannelsPanel cp){
 		user = new User(userName);
+		pv = new PageViewer();
 		this.cp = cp;
 	}
 	public Channel searchChannel(String channelName) {
@@ -24,6 +25,7 @@ public class PageControllerUser {
 		user.watchLive(c, pv);
 	}
 	public void closeLive() {
+		pv.destroyCommentList();
 		user.closeLive(pv);
 	}
 	public void addComment(String s) {
