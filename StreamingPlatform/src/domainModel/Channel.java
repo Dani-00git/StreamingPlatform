@@ -16,6 +16,11 @@ public class Channel extends Osservato {
 		this.live=new Live();
 	}
 	
+	public Channel(Channel c) {   
+		this.name = c.getName();   
+		this.live = new Live();
+	}
+	
 	public void addFollower(User newFollower, PageViewer pv) {
 		followers.add(newFollower);
 		super.attachFollower(pv);

@@ -10,8 +10,8 @@ import domainModel.Osservatore;
 public class PageViewer implements Osservatore{
 	
 	private ArrayList<Comment> commentList = new ArrayList<Comment>();
-	private ArrayList<Channel> followedChannelOnAir = new ArrayList<Channel>();
-	private ArrayList<Channel> recommendedChannels = new ArrayList<Channel>();
+	private ArrayList<String> followedChannelOnAir = new ArrayList<String>();
+	private ArrayList<String> recommendedChannels = new ArrayList<String>();
 	private int likes;
 	
 	public void update(Comment c) {
@@ -20,7 +20,7 @@ public class PageViewer implements Osservatore{
 	public void update(int likes) {
 		this.likes = likes;
 	}
-	public void update(Boolean startedEnded, Channel c) {
+	public void update(Boolean startedEnded, String c) {
 		if(startedEnded) {
 			followedChannelOnAir.add(c);
 		}
@@ -28,7 +28,7 @@ public class PageViewer implements Osservatore{
 			followedChannelOnAir.remove(c);
 		}
 	}
-	public void updateRecommendedChannels(ArrayList<Channel> c) {
+	public void updateRecommendedChannels(ArrayList<String> c) {
 		recommendedChannels = c;
 	}
 }

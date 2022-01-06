@@ -17,16 +17,18 @@ public class Live extends Osservato{
     	this.likes = 0;
     }
     
-    public void startLive(String name, Channel thisChannel) {   //FIXED la live parte non quando viene creata ma quando lo streamer la fa partire
-    	this.onAir = true;                                      // il metodo notify richiede un bool e il canale della live, quindi gli ho fatto passare un riferimemto al canale
+    public void startLive(String name, Channel thisChannel) {   
+    	this.onAir = true;                                      
     	this.name = name;
-    	super.notify(true, thisChannel);
+    	String n = thisChannel.getName();
+    	super.notify(true, n);
     }
     
     public void closeLive(Channel thisChannel) {
     	this.onAir = false;
     	this.name = null;
-    	super.notify(false, thisChannel);
+    	String n = thisChannel.getName();
+    	super.notify(false, n);
     }
 	
 	public void addLike() {
@@ -40,6 +42,8 @@ public class Live extends Osservato{
 	public void addComment(String myComment, String user) {
 		Comment comment = new Comment(myComment, user);
 		this.commentList.add(comment);
+		Comment c = new Comment(comment);
+    	super.notify(c);
 	}
 	
 	public boolean isOnAir() {

@@ -20,6 +20,7 @@ public class RecommendedChannels {
 		topics.add(newTopic);
 		calculateRecommendedChannels();
 	}
+	
 	public void removeTopic(String topic) {
 		for(Topic t : topics) {
 			if(t.getName() == topic) {
@@ -29,9 +30,9 @@ public class RecommendedChannels {
 		calculateRecommendedChannels();
 	}
 	public void calculateRecommendedChannels() {
-		ArrayList<Channel> recommendedChannels = new ArrayList<Channel>();
+		ArrayList<String> recommendedChannels = new ArrayList<String>();
 		for(Topic t:topics) {
-			recommendedChannels.add(cp.searchByTopic(t));
+			recommendedChannels.add(cp.searchByTopic(t).getName());
 		}
 		pv.updateRecommendedChannels(recommendedChannels);
 	}
