@@ -53,5 +53,8 @@ public class Channel extends Osservato {
     public User getFollower(int i) {
     	return followers.get(i);
     }
+    public void setTopic(Topic t) {
+    	channelTopic = t;
+    }
 
 }

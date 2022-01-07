@@ -58,5 +58,8 @@ public class Live extends Osservato{
 		super.detachViewer(watcher);
 	}
 
+	public Comment getComment(int i) {
+		return commentList.get(i);
+	}
 
 }

@@ -33,10 +33,10 @@ public class Osservato {
 			o.update(newComment);
 		}
 	}
+	
 	protected void notify(int likes) {
 		for(Osservatore o : viewers) {
 			o.update(likes);
 		}
 	}
-
 }

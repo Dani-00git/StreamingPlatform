@@ -16,6 +16,10 @@ public class User {
     public User(String name) {
     	this.name = name;
     }
+    
+    public User(User u) {
+    	this.name = u.getName();
+    }
    
     public void followChannel (Channel channel, PageViewer pv) {
 	   this.followedChannels.add(channel);
@@ -56,6 +60,11 @@ public class User {
    
     public void removeTopic(Topic topic) {
     	this.favouriteTopics.remove(topic);
+    }
+    
+    public String getName() {
+    	String n = new String(this.name);
+    	return n;
     }
 
 }

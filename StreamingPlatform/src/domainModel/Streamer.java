@@ -12,8 +12,12 @@ public class Streamer extends User {
 		this.myChannel.startLive(name);
 	}
 	
-	public void stopLive() {            //Aggiunto
+	public void stopLive() {            
 		this.myChannel.stopLive();
+	}
+	
+	public void setTopic(Topic t) {            
+		this.myChannel.setTopic(t);
 	}
 }
 

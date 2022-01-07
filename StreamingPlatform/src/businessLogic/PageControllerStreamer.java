@@ -2,6 +2,7 @@ package businessLogic;
 
 import domainModel.ChannelsPanel;
 import domainModel.Streamer;
+import domainModel.Topic;
 
 public class PageControllerStreamer extends PageControllerUser{
 
@@ -18,5 +19,8 @@ public class PageControllerStreamer extends PageControllerUser{
 	}
 	public void stopLive() {
 		streamer.stopLive();
+	}
+	public void setTopic(Topic t) {
+		streamer.setTopic(t);
 	}
 }
