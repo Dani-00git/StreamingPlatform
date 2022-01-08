@@ -10,7 +10,7 @@ public class RecommendedChannels {
 	private ChannelsPanel cp;
 	private PageViewer pv;
 	
-	public void RecommendedChannels(ChannelsPanel cp, PageViewer pv) {
+	public RecommendedChannels(ChannelsPanel cp, PageViewer pv) {
 		this.cp = cp;
 		this.pv = pv;
 	}
@@ -23,17 +23,26 @@ public class RecommendedChannels {
 	
 	public void removeTopic(String topic) {
 		for(Topic t : topics) {
-			if(t.getName() == topic) {
+			if(t.getName().contentEquals(topic)) {
 				topics.remove(t);
 			}
 		}
 		calculateRecommendedChannels();
 	}
+	
 	public void calculateRecommendedChannels() {
 		ArrayList<String> recommendedChannels = new ArrayList<String>();
 		for(Topic t:topics) {
 			recommendedChannels.add(cp.searchByTopic(t).getName());
 		}
 		pv.updateRecommendedChannels(recommendedChannels);
+	}
+	
+	public String getTopic(int i) {
+		if(topics.size() > 0) {
+			String t = new String(topics.get(i).getName());
+			return t;
+		}
+		return null;
 	}
 }

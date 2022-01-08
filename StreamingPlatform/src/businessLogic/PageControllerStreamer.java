@@ -12,7 +12,7 @@ public class PageControllerStreamer extends PageControllerUser{
 	public PageControllerStreamer(String userName, ChannelsPanel cp, String channelName) {
 		super(userName, cp);
 		this.userName = userName;
-		streamer = new Streamer(userName, channelName);
+		streamer = new Streamer(userName, channelName, cp);
 	}
 	public void startLive(String name) {
 		streamer.startLive(name);

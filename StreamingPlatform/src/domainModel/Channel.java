@@ -42,12 +42,13 @@ public class Channel extends Osservato {
     public Live getLive() {
 		return this.live;
 	}
+    
     public String getName() {
     	String n = new String(this.name);
     	return n;
     }
-    public Topic getTopic() {
-    	Topic t = new Topic(channelTopic);
+    public String getTopic() {
+    	String t = new String(channelTopic.getName());
     	return t;
     }
     public User getFollower(int i) {

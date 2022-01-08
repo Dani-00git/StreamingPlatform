@@ -12,7 +12,7 @@ public class PageViewer implements Osservatore{
 	private ArrayList<Comment> commentList = new ArrayList<Comment>();
 	private ArrayList<String> followedChannelOnAir = new ArrayList<String>();
 	private ArrayList<String> recommendedChannels = new ArrayList<String>();
-	private int likes;
+	private int likes = 0;
 	
 	public void update(Comment c) {
 		commentList.add(c);
