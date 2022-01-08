@@ -25,24 +25,9 @@ class RecommendedChannelsTests {
 		pv = new PageViewer();
 		cp = new ChannelsPanel();
 		rc = new RecommendedChannels(cp, pv);
-		ArrayList<Streamer> s = new ArrayList<Streamer>();
-
-		for(int i=0; i<10; i++) {
-			s.add(new Streamer("streamer di test", "canale di test", cp, rc)); 
-		}
+		Streamer s = new Streamer("streamer di test", "canale di test", cp, rc);
 		Topic t1 = new Topic("gaming");
-		s.get(0).setTopic(t1);
-		s.get(1).setTopic(t1);
-		s.get(2).setTopic(t1);
-		Topic t2 = new Topic("just chatting");
-		s.get(3).setTopic(t1);
-		s.get(4).setTopic(t1);
-		s.get(5).setTopic(t1);
-		s.get(6).setTopic(t1);
-		Topic t3 = new Topic("sports");
-		s.get(7).setTopic(t1);
-		s.get(8).setTopic(t1);
-		s.get(9).setTopic(t1);
+		s.setTopic(t1);
 	}
 
 	@Test
@@ -60,11 +45,6 @@ class RecommendedChannelsTests {
 		rc.removeTopic("gaming");
 		//Verify
 		assertNotEquals(rc.getTopic(0), "gaming");
-	}
-
-	@Test
-	void testCalculateRecommendedChannels() {
-		
 	}
 
 }

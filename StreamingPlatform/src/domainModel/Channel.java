@@ -7,7 +7,6 @@ public class Channel extends Osservato {
 	
 	private String name;
 	private Live live;
-	private RecommendedChannels rc;
 	private ArrayList<User> followers = new ArrayList<User> ();   
 	private Topic channelTopic;
 	
