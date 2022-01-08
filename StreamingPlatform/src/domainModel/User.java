@@ -8,10 +8,15 @@ public class User {
 	
     protected String name;
     protected ChannelsPanel channelsPanel;
-    protected ArrayList<Topic> favouriteTopics = new ArrayList<Topic>();       //
+    protected ArrayList<Topic> favouriteTopics = new ArrayList<Topic>();       
     protected ArrayList<Channel> followedChannels = new ArrayList<Channel>();
     protected RecommendedChannels recommendedChannels;
     protected Live watchedLive;
+    
+    public User(String name, RecommendedChannels rc) {
+    	this.name = name;
+    	this.recommendedChannels = rc;
+    }
     
     public User(String name) {
     	this.name = name;

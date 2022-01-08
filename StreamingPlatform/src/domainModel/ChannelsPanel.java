@@ -18,9 +18,10 @@ public class ChannelsPanel {
 		 }
 		 return null;
 	 }
+	 
 	 public Channel searchByTopic(Topic t) {
 		 for(Channel c : channels) {
-			 if(c.getTopic() == t) {
+			 if(c.getTopic().contentEquals(t.getName())) {
 				 return c;
 			 }
 		 }
