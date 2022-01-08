@@ -26,4 +26,8 @@ public class ChannelsPanel {
 		 }
 		 return null;
 	 }
+	 
+	 public Channel getChannel(int i) {
+		 return channels.get(i);
+	 }
 }
