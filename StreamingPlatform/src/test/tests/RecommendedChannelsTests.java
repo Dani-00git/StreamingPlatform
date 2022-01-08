@@ -20,7 +20,7 @@ class RecommendedChannelsTests {
 	private static PageViewer pv;
 	private static RecommendedChannels rc;
 	
-	@BeforeAll
+	@BeforeAll 
 	static void setUpBeforeClass(){
 		pv = new PageViewer();
 		cp = new ChannelsPanel();
