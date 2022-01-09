@@ -36,7 +36,6 @@ class RecommendedChannelsTests {
 		rc.addTopic("gaming");
 		//Verify
 		assertEquals(rc.getTopic(0), "gaming");
-		//Exercise
 	}
 	
 	@Test 

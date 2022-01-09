@@ -10,12 +10,13 @@ public class PageControllerUser {
 	
 	protected User user;
 	protected ChannelsPanel cp;
-	protected PageViewer pv;
+	public PageViewer pv;
 	protected RecommendedChannels rc;
 	
 	public PageControllerUser(String userName, ChannelsPanel cp){
 		user = new User(userName);
 		pv = new PageViewer();
+		rc = new RecommendedChannels(cp, pv);
 		this.cp = cp;
 	}
 	public Channel searchChannel(String channelName) {
@@ -45,6 +46,9 @@ public class PageControllerUser {
 	}
 	public void removeTopic(String topic) {
 		rc.removeTopic(topic);
+	}
+	public String getWatchedLive() {
+		return user.getWatchedLive();
 	}
 	
 }

@@ -72,4 +72,9 @@ public class User {
     	return n;
     }
 
+    public String getWatchedLive() {
+    	if(watchedLive == null) return null;
+    	String s = new String(watchedLive.getName());
+    	return watchedLive.getName();
+    }
 }

@@ -34,4 +34,11 @@ public class PageViewer implements Osservatore{
 	public void destroyCommentList() {
 		commentList = new ArrayList<Comment>();
 	}
+	public String getComment(int i) {
+		String s = new String(commentList.get(i).getComment());
+		return s;
+	}
+	public int getLikes() {
+		return likes;
+	}
 }

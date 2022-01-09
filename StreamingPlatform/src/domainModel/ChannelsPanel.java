@@ -12,7 +12,7 @@ public class ChannelsPanel {
 	 
 	 public Channel search(String name) {
 		 for(Channel c : channels) {
-			 if(c.getName() == name) {
+			 if(c.getName().contentEquals(name)) {
 				 return c;
 			 }
 		 }

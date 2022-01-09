@@ -11,8 +11,8 @@ public class Comment {
 	}
 	
 	public Comment(Comment c) {
-		this.comment = comment;
-		this.user = user;
+		this.comment = c.getComment();
+		this.user = c.getName();
 	}
 	
 	public String getName() {

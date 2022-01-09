@@ -10,16 +10,16 @@ public class Osservato {
 	protected ArrayList<Osservatore> followers = new ArrayList<Osservatore>();
 	
 	public void attachFollower(Osservatore o) {
-		viewers.add(o);
-	}
-	public void detachFollower(Osservatore o) {
-		viewers.remove(o);
-	}
-	public void attachViewer(Osservatore o) {
 		followers.add(o);
 	}
-	public void detachViewer(Osservatore o) {
+	public void detachFollower(Osservatore o) {
 		followers.remove(o);
+	}
+	public void attachViewer(Osservatore o) {
+		viewers.add(o);
+	}
+	public void detachViewer(Osservatore o) {
+		viewers.remove(o);
 	}
 	
 	protected void notify(Boolean se, String c) {
