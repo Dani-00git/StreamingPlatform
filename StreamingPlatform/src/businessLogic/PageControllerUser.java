@@ -50,6 +50,9 @@ public class PageControllerUser {
 	public String getWatchedLive() {
 		return user.getWatchedLive();
 	}
+	public String getUserFollowedChannell(int i) {
+		return user.getFollowedChannel(i);
+	}
 	
 }
 

@@ -27,12 +27,12 @@ public class User {
     }
    
     public void followChannel (Channel channel, PageViewer pv) {
-	   this.followedChannels.add(channel);
-	   channel.addFollower(this, pv);
+    	this.followedChannels.add(channel);
+    	channel.addFollower(this, pv);
     }
 	
     public void unfollowChannel (Channel channel, PageViewer pv) {
-    	this.followedChannels.remove(channel);
+		followedChannels.remove(0);
     	channel.removeFollower(this, pv);
     }
    
@@ -76,5 +76,9 @@ public class User {
     	if(watchedLive == null) return null;
     	String s = new String(watchedLive.getName());
     	return watchedLive.getName();
+    }
+    public String getFollowedChannel(int i) {
+    	String s = new String(followedChannels.get(0).getName());
+    	return s;
     }
 }

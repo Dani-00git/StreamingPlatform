@@ -69,19 +69,28 @@ class PageControllerUserTest {
 		//Exercise
 		pcu.watchLive(pcu.searchChannel("canale di test"));
 		pcu.addLike();
+		pcu.addLike();
+		pcu.addLike();
 		//Verify
-		assertEquals(pcu.pv.getLikes(), 1);
+		assertEquals(pcu.pv.getLikes(), 3);
 		
 	}
 
 	@Test
 	void testFollowChannel() {
-		fail("Not yet implemented");
+		//Exercise
+		pcu.followChannel(pcu.searchChannel("canale di test"));
+		//Verify
+		assertEquals(pcu.getUserFollowedChannell(0), "canale di test");
 	}
 
 	@Test
 	void testUnfollowChannel() {
-		fail("Not yet implemented");
+		//Exercise
+		pcu.followChannel(pcu.searchChannel("canale di test"));
+		pcu.unfollowChannel(pcu.searchChannel("canale di test"));
+		//Verify
+		assertNotEquals(pcu.getUserFollowedChannell(0), "canale di test");
 	}
 
 	@Test
