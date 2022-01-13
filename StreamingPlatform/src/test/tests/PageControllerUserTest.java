@@ -3,7 +3,11 @@ package tests;
 import static org.junit.Assert.assertEquals; 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.concurrent.TimeUnit;
+
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 import businessLogic.PageControllerUser;
@@ -21,13 +25,16 @@ class PageControllerUserTest {
 	@BeforeAll
 	static void setUpBeforeClass(){
 		ChannelsPanel cp = new ChannelsPanel();
+		Topic t = new Topic("gaming");
 		cp = new ChannelsPanel();
 		Streamer s = new Streamer("streamer di test", "canale di test", cp);
+		s.setTopic(t);
 		s.startLive("live di test");
 		pcu = new PageControllerUser("userditest", cp);
 	}
 
 	@Test
+    @Order(1)
 	void testSearchChannel() {
 		//Exercise
 		Channel c = pcu.searchChannel("canale di test");
@@ -36,6 +43,7 @@ class PageControllerUserTest {
 	}
 
 	@Test
+    @Order(2)
 	void testWatchLive() {
 		//Exercise
 		pcu.watchLive(pcu.searchChannel("canale di test"));
@@ -45,6 +53,7 @@ class PageControllerUserTest {
 	}
 
 	@Test
+    @Order(3)
 	void testCloseLive() {
 		//Exercise
 		pcu.watchLive(pcu.searchChannel("canale di test"));
@@ -55,6 +64,7 @@ class PageControllerUserTest {
 	}
 
 	@Test
+    @Order(4)
 	void testAddComment() {
 		//Exercise
 		pcu.watchLive(pcu.searchChannel("canale di test"));
@@ -65,6 +75,7 @@ class PageControllerUserTest {
 	}
 
 	@Test
+    @Order(5)
 	void testAddLike() {
 		//Exercise
 		pcu.watchLive(pcu.searchChannel("canale di test"));
@@ -77,6 +88,7 @@ class PageControllerUserTest {
 	}
 
 	@Test
+    @Order(6)
 	void testFollowChannel() {
 		//Exercise
 		pcu.followChannel(pcu.searchChannel("canale di test"));
@@ -85,22 +97,30 @@ class PageControllerUserTest {
 	}
 
 	@Test
-	void testUnfollowChannel() {
+    @Order(7)
+	static void testUnfollowChannel() {
 		//Exercise
-		pcu.followChannel(pcu.searchChannel("canale di test"));
 		pcu.unfollowChannel(pcu.searchChannel("canale di test"));
 		//Verify
 		assertNotEquals(pcu.getUserFollowedChannell(0), "canale di test");
 	}
 
 	@Test
+    @Order(8)
 	void testAddTopic() {
-		fail("Not yet implemented");
+		//Exercise
+		pcu.addTopic("gaming");
+		//Verify
+		assertEquals(pcu.getTopic(0), "gaming");
 	}
 
 	@Test
-	void testRemoveTopic() {
-		fail("Not yet implemented");
+    @Order(8)
+	static void testRemoveTopic() {
+		//Exercise
+		pcu.removeTopic("gaming");
+		//Verify
+		assertNotEquals(pcu.getUserFollowedChannell(0), "gaming");
 	}
 
 }

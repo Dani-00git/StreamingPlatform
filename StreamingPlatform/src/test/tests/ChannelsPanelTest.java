@@ -24,7 +24,7 @@ class ChannelsPanelTest {
 		//Exercise
 		cp.addNewChannel(c);
 		//Verify
-	    assertEquals(c,cp.getChannel(0));
+	    assertEquals(c.getName(),cp.getChannel(0).getName());
 	}
 	
 	@Test
@@ -34,7 +34,7 @@ class ChannelsPanelTest {
 		//Exercise
 		cp.addNewChannel(c);
 		//Verify
-		assertEquals(c, cp.search(n));
+		assertEquals(c.getName(), cp.search(n).getName());
 	}
 	
 	@Test

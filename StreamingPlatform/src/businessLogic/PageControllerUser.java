@@ -53,6 +53,9 @@ public class PageControllerUser {
 	public String getUserFollowedChannell(int i) {
 		return user.getFollowedChannel(i);
 	}
+	public String getTopic(int i) {
+		return rc.getTopic(i);
+	}
 	
 }
 
