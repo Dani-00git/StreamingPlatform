@@ -26,6 +26,7 @@ public class Streamer extends User {
 	public void setTopic(Topic t) {            
 		this.myChannel.setTopic(t);
 	}
+	
 }
 
 
