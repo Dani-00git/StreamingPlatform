@@ -61,10 +61,13 @@ public class Live extends Osservato{
 	}
 
 	public Comment getComment(int i) {
-		return commentList.get(i);
+		Comment c = new Comment(commentList.get(i));
+		return c;
 	}
 	
 	public String getName() {
+		if (name == null)
+			return null;
     	String s = new String(name);
     	return s;
 	}

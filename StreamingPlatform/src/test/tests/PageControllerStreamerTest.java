@@ -19,16 +19,16 @@ package tests;
         
 	class PageControllerStreamerTest {
 		private static PageControllerStreamer pcs;
-		private ChannelsPanel cp;
-		private Channel c;
-		private Topic t;
+		private static ChannelsPanel cp;
+		private static Channel c;
+		private static Topic t;
 		
 		@BeforeAll
 		static void setupBeforeClass( ) {
 			ChannelsPanel cp = new ChannelsPanel();
 			pcs = new PageControllerStreamer ("streamer di test", cp, "canale di test");
-			Channel c = cp.search("canale di test");
-			Topic t = new Topic("Gaming");
+			c = cp.search("canale di test");
+			t = new Topic("Gaming");
 		}
 		
 

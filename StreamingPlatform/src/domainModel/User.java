@@ -17,14 +17,6 @@ public class User {
     	this.name = name;
     	this.recommendedChannels = rc;
     }
-    
-    public User(String name) {
-    	this.name = name;
-    }
-    
-    public User(User u) {
-    	this.name = u.getName();
-    }
    
     public void followChannel (Channel channel, PageViewer pv) {
     	this.followedChannels.add(channel);
@@ -80,5 +72,13 @@ public class User {
     public String getFollowedChannel(int i) {
     	String s = new String(followedChannels.get(0).getName());
     	return s;
+    }
+    
+    public User(String name) {
+    	this.name = name;
+    }
+    
+    public User(User u) {
+    	this.name = u.getName();
     }
 }

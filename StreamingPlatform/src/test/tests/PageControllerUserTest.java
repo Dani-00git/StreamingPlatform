@@ -70,7 +70,7 @@ class PageControllerUserTest {
 		pcu.watchLive(pcu.searchChannel("canale di test"));
 		pcu.addComment("commento di test");
 		//Verify
-		assertEquals(pcu.pv.getComment(0), "commento di test");
+		assertEquals(pcu.getPV().getComment(0), "commento di test");
 		
 	}
 
@@ -83,7 +83,7 @@ class PageControllerUserTest {
 		pcu.addLike();
 		pcu.addLike();
 		//Verify
-		assertEquals(pcu.pv.getLikes(), 3);
+		assertEquals(pcu.getPV().getLikes(), 3);
 		
 	}
 

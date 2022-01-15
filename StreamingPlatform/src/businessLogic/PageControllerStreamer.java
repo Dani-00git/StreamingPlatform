@@ -23,8 +23,5 @@ public class PageControllerStreamer extends PageControllerUser{
 	public void setTopic(Topic t) {
 		streamer.setTopic(t);
 	}
-	public Streamer getStreamer() {
-		return this.streamer;
-	}
 	
 }
