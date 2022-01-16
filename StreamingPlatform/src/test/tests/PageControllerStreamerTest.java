@@ -30,8 +30,6 @@ package tests;
 			c = cp.search("canale di test");
 			t = new Topic("Gaming");
 		}
-		
-
 		@Test
 		void startLiveTest() { 
 			//Exercise
@@ -39,10 +37,7 @@ package tests;
 			//Verify
 		    assertEquals(true, c.getLive().isOnAir());
 		    assertEquals("live", c.getLive().getName());
-		    
-		    
 		}
-		
 		@Test
 		void stopLiveTest() {
 			//Exercise
@@ -52,7 +47,6 @@ package tests;
 			assertEquals(false, c.getLive().isOnAir());
 			assertEquals(null, c.getLive().getName());
 		}
-		
 		@Test
 		void addTopicTest() {
 		    //Exercise
@@ -60,7 +54,6 @@ package tests;
 			//Verify
 			assertEquals("Gaming", c.getTopic());
 		}
-		
 	}
 		
 

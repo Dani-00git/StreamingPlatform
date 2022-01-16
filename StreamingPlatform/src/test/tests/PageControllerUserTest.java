@@ -32,7 +32,6 @@ class PageControllerUserTest {
 		s.startLive("live di test");
 		pcu = new PageControllerUser("userditest", cp);
 	}
-
 	@Test
     @Order(1)
 	void testSearchChannel() {
@@ -41,7 +40,6 @@ class PageControllerUserTest {
 		//Verify
 		assertEquals(c.getName(), "canale di test");
 	}
-
 	@Test
     @Order(2)
 	void testWatchLive() {
@@ -49,9 +47,7 @@ class PageControllerUserTest {
 		pcu.watchLive(pcu.searchChannel("canale di test"));
 		//Verify
 		assertEquals(pcu.getWatchedLive(), "live di test");
-
 	}
-
 	@Test
     @Order(3)
 	void testCloseLive() {
@@ -60,9 +56,7 @@ class PageControllerUserTest {
 		pcu.closeLive();
 		//Verify
 		assertNotEquals(pcu.getWatchedLive(), "live di test");
-		
 	}
-
 	@Test
     @Order(4)
 	void testAddComment() {
@@ -71,9 +65,7 @@ class PageControllerUserTest {
 		pcu.addComment("commento di test");
 		//Verify
 		assertEquals(pcu.getPV().getComment(0), "commento di test");
-		
 	}
-
 	@Test
     @Order(5)
 	void testAddLike() {
@@ -84,9 +76,7 @@ class PageControllerUserTest {
 		pcu.addLike();
 		//Verify
 		assertEquals(pcu.getPV().getLikes(), 3);
-		
 	}
-
 	@Test
     @Order(6)
 	void testFollowChannel() {
@@ -95,7 +85,6 @@ class PageControllerUserTest {
 		//Verify
 		assertEquals(pcu.getUserFollowedChannell(0), "canale di test");
 	}
-
 	@Test
     @Order(7)
 	static void testUnfollowChannel() {
@@ -104,7 +93,6 @@ class PageControllerUserTest {
 		//Verify
 		assertNotEquals(pcu.getUserFollowedChannell(0), "canale di test");
 	}
-
 	@Test
     @Order(8)
 	void testAddTopic() {
@@ -113,14 +101,12 @@ class PageControllerUserTest {
 		//Verify
 		assertEquals(pcu.getTopic(0), "gaming");
 	}
-
 	@Test
-    @Order(8)
+    @Order(9)
 	static void testRemoveTopic() {
 		//Exercise
 		pcu.removeTopic("gaming");
 		//Verify
 		assertNotEquals(pcu.getUserFollowedChannell(0), "gaming");
 	}
-
 }
