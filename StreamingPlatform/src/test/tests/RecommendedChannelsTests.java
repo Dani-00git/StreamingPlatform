@@ -45,5 +45,12 @@ class RecommendedChannelsTests {
 		//Verify
 		assertNotEquals(rc.getTopic(0), "gaming");
 	}
+	@Test
+	void testCalculateRecommendedChannels() {
+		//Exercise
+		rc.addTopic("gaming");
+		//Verify
+		assertEquals(rc.getRecommendedChannel() , "canale di test");
+	}
 
 }

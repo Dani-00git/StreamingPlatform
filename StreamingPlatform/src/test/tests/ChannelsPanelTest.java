@@ -17,7 +17,6 @@ class ChannelsPanelTest {
 	static void setUpBeforeClass(){
 		cp = new ChannelsPanel() ;
 	}
-
 	@Test
 	public void addNewChannelTest() {
 		Channel c = new Channel("NomeCanale");
@@ -26,7 +25,6 @@ class ChannelsPanelTest {
 		//Verify
 	    assertEquals(c.getName(),cp.getChannel(0).getName());
 	}
-	
 	@Test
 	public void searchTest() {
 		Channel c = new Channel("NomeCanale");
@@ -36,7 +34,6 @@ class ChannelsPanelTest {
 		//Verify
 		assertEquals(c.getName(), cp.search(n).getName());
 	}
-	
 	@Test
 	public void searchByTopicTest() {
 		Channel c = new Channel("NomeCanale");

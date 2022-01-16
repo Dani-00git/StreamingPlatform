@@ -7,6 +7,7 @@ import businessLogic.PageViewer;
 public class RecommendedChannels {
 	
 	private ArrayList<Topic> topics = new ArrayList<Topic>();
+	private ArrayList<Channel> recommendedChannels = new ArrayList<Channel>();
 	private ChannelsPanel cp;
 	private PageViewer pv;
 	
@@ -31,11 +32,13 @@ public class RecommendedChannels {
 	}
 	
 	public void calculateRecommendedChannels() {
-		ArrayList<String> recommendedChannels = new ArrayList<String>();
+
+		ArrayList<String> r = new ArrayList<String>();
 		for(Topic t:topics) {
-			recommendedChannels.add(cp.searchByTopic(t).getName());
+			recommendedChannels.add(cp.searchByTopic(t));
+			r.add(cp.searchByTopic(t).getName());
 		}
-		pv.updateRecommendedChannels(recommendedChannels);
+		pv.updateRecommendedChannels(r);
 	}
 	
 	public String getTopic(int i) {
@@ -44,5 +47,8 @@ public class RecommendedChannels {
 			return t;
 		}
 		return null;
+	}
+	public String getRecommendedChannel() {
+		return recommendedChannels.get(0).getName();
 	}
 }

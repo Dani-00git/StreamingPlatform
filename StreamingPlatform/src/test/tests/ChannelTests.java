@@ -14,12 +14,10 @@ import domainModel.User;
 class ChannelTests {
 	
 	private static Channel c;
-
 	@BeforeAll
 	static void setUpBeforeClass(){
 		c = new Channel("canaleditest");
 	}
-	
 	@Test
 	public void testAddFollower() {
 		
@@ -30,7 +28,6 @@ class ChannelTests {
 		//Verify
 		assertEquals(u, c.getFollower(0));
 	}
-	
 	@Test
 	public void testRemoveFollower() {
 
@@ -43,7 +40,6 @@ class ChannelTests {
 		//verify
 		assertNotEquals(u, c.getFollower(0));
 	}
-
 	@Test
 	public void testStartLive() {
 		//Exercise
@@ -51,7 +47,6 @@ class ChannelTests {
 		//Verify
 		assertEquals(true, c.getLive().isOnAir());
 	}
-
 	@Test
 	public void testStopLive() {
 
@@ -60,7 +55,6 @@ class ChannelTests {
 		//Verify
 		assertEquals(false, c.getLive().isOnAir());
 	}
-
 	@Test
 	public void testSetTopic() {
 		

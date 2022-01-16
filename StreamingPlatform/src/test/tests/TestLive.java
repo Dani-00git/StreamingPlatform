@@ -23,7 +23,6 @@ public class TestLive extends TestCase {
 		c = new Channel("canale per test");
 		l = c.getLive();
 	}
-
 	@Test
 	public void testStartLive() {
 		//Exercise
@@ -31,7 +30,6 @@ public class TestLive extends TestCase {
 		//Verify
 		assertEquals(true, l.isOnAir());
 	}
-
 	@Test
 	public void testCloseLive() {
 		//Exercise
@@ -39,7 +37,6 @@ public class TestLive extends TestCase {
 		//Verify
 		assertEquals(false, l.isOnAir());
 	}
-
 	@Test
 	public void testAddComment() {
 		String newComment = new String("commento di test");
