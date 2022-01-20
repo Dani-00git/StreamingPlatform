@@ -32,13 +32,13 @@ public class Live extends Osservato{
     }
 	
 	public void addLike() {
-		this.likes++;
-		super.notify(likes);
+		int l = this.likes++;
+		super.notify(l);
 	}
 	
 	public void decreaseLike() {
-		this.likes--;
-		super.notify(likes);
+		int l = this.likes--;
+		super.notify(l);
 	}
 	
 	public void addComment(String myComment, String user) {

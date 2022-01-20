@@ -13,7 +13,7 @@ import domainModel.Channel;
 import domainModel.Live;
 import domainModel.User;
 
-public class TestLive extends TestCase {
+public class TestLive  {
 	
 	private static Live l;
 	private static Channel c;
