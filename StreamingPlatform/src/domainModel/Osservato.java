@@ -1,4 +1,4 @@
-package domainModel;
+ package domainModel;
 
 import java.util.ArrayList;
 import java.util.Observer;

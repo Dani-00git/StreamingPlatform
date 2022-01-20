@@ -50,14 +50,6 @@ public class User {
     public void addComment(String myComment) {
     	this.watchedLive.addComment(myComment, this.name);
     }
-   
-    public void addTopic(Topic topic) {
-    	this.favouriteTopics.add(topic);
-    }
-   
-    public void removeTopic(Topic topic) {
-    	this.favouriteTopics.remove(topic);
-    }
     
     public String getName() {
     	String n = new String(this.name);
@@ -67,8 +59,9 @@ public class User {
     public String getWatchedLive() {
     	if(watchedLive == null) return null;
     	String s = new String(watchedLive.getName());
-    	return watchedLive.getName();
+    	return s;
     }
+    
     public String getFollowedChannel(int i) {
     	String s = new String(followedChannels.get(0).getName());
     	return s;

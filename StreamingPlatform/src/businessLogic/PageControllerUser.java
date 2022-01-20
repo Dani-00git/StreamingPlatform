@@ -1,4 +1,4 @@
-package businessLogic;
+ package businessLogic;
 
 import domainModel.Channel;
 import domainModel.ChannelsPanel;
